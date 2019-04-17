@@ -1,0 +1,3005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="NroSistema">
+        <s:complexType />
+      </s:element>
+      <s:element name="NroSistemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NroSistemaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_OBTENERPROVEEDOR_PORCODIGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdprov" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_OBTENERPROVEEDOR_PORCODIGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_OBTENERPROVEEDOR_PORCODIGOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTEResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Reportes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdReporte" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdTipoReporte" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_ReportesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_ReportesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OBTENER_ULTIMO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OBTENER_ULTIMO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OBTENER_ULTIMO_ESTADOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VALIDA_EXPEDIENTESCOMPROBANTES_">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdComp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdDesglose" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VALIDA_EXPEDIENTESCOMPROBANTES_Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VALIDA_EXPEDIENTESCOMPROBANTES_Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_TipoExpediente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="int" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_TipoExpedienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_TipoExpedienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Proveedores_Bycuit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pdscuit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pdsBene" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Proveedores_BycuitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Proveedores_BycuitResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_SuConcepto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdPadre" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_SuConceptoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_SuConceptoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OBTENER_ESTADOS_ByEXPEDIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OBTENER_ESTADOS_ByEXPEDIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OBTENER_ESTADOS_ByEXPEDIENTEResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Val_BycdCom_BycdProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdComp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdProv" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Val_BycdCom_BycdProveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Val_BycdCom_BycdProveedorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarComprobantes_BycdProv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsComp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdProv" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdClaseC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdTipoC" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarComprobantes_BycdProvResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarComprobantes_BycdProvResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_ValidaCotizacion_BycdMoneda_byFecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intMoneda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFecha" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_ValidaCotizacion_BycdMoneda_byFechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_ValidaCotizacion_BycdMoneda_byFechaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraerPantalla_ByConcepto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraerPantalla_ByConceptoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraerPantalla_ByConceptoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BusquedaFiltradaExpedientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pdsExp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdProveedor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtDesde" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dthasta" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="intEstado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdClaseC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdTipoC" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsNroComp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsObservacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdTipoExpediente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdNoLiq" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdArea" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdAreaMov" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdSinRel" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdEtapa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BusquedaFiltradaExpedientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BusquedaFiltradaExpedientesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_codExpediente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pdsExp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_codExpedienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_codExpedienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_ComprobantesAsociados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdAgrupado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_ComprobantesAsociadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_ComprobantesAsociadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_Busqueda_ConvenioOtros">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdAgrupado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_Busqueda_ConvenioOtrosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_Busqueda_ConvenioOtrosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Estados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdEstado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_EstadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_EstadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Etapa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdValor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_EtapaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_EtapaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Proveedores_Organismos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EsExterior" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdBaja" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Proveedores_OrganismosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Proveedores_OrganismosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_ClaseComprobantes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdClaseComp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_ClaseComprobantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_ClaseComprobantesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_TipoComprobantes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdGrupo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_TipoComprobantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_TipoComprobantesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Monedas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdMoneda" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_MonedasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_MonedasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_TipoPeriodicidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdValor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_TipoPeriodicidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_TipoPeriodicidadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Periodicidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdTipo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_PeriodicidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_PeriodicidadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Conceptos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdconcepto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_ConceptosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_ConceptosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Areas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intArea" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsNombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_AreasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_AreasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Cotizaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intMoneda" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_CotizacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_CotizacionesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarDesglose">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsNroExp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarDesgloseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarDesgloseResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarConcepto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsConcepto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdNivel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarConceptoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarConceptoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TRAER_EXPEDIENTE_DESGLOSADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdComp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TRAER_EXPEDIENTE_DESGLOSADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TRAER_EXPEDIENTE_DESGLOSADOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectIndicadoresGestion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdAnio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdMes" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectIndicadoresGestionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectIndicadoresGestionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_TOOLTIP_COMPROBANTES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_TOOLTIP_COMPROBANTESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_TOOLTIP_COMPROBANTESResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_TOOLTIP_MovimientosDelExpediente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdSeg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_TOOLTIP_MovimientosDelExpedienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_TOOLTIP_MovimientosDelExpedienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_TOOLTIP_OBSERVACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_TOOLTIP_OBSERVACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_TOOLTIP_OBSERVACIONResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_SELECT_NroExpedienteRel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_SELECT_NroExpedienteRelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_SELECT_NroExpedienteRelResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_ComprobantesRel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_ComprobantesRelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_ComprobantesRelResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_ComprobantesTodos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_ComprobantesTodosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_ComprobantesTodosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_UltimaEtapa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_UltimaEtapaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_UltimaEtapaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VALIDAR_ANEXADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VALIDAR_ANEXADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VALIDAR_ANEXADOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VALIDAR_INFORMANDOEXPEDIENTEANEXADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VALIDAR_INFORMANDOEXPEDIENTEANEXADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VALIDAR_INFORMANDOEXPEDIENTEANEXADOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_DESGLOSE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_DESGLOSEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="INSERT_DESGLOSEResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpedientesConceptos_IU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpedientesConceptos_IUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExpedientesConceptos_IUResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CONCEPTOS_I">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CONCEPTOS_IResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CONCEPTOS_IResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_COMPROBANTES_EC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intError" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_COMPROBANTES_ECResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_COMPROBANTES_ECResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_E">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_EResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_EResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_SEGUIMIENTO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_SEGUIMIENTO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_SEGUIMIENTO_ESTADOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intError" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTESResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proveedor_IU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TOXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Proveedor_IUResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CotizacionMoneda_IU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TOXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CotizacionMoneda_IUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CotizacionMoneda_IUResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpedientesConveniosOtros_IU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TOXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpedientesConveniosOtros_IUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExpedientesConveniosOtros_IUResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_C">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intError" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_CResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_CResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Seguimiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdSeg" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sObs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_SeguimientoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_SeguimientoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdComprobante" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intError" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTESResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ELIMINAR_RELACION_COMPROBANTES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdComprobante" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ELIMINAR_RELACION_COMPROBANTESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ELIMINAR_RELACION_COMPROBANTESResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Conceptos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcdExp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pcdConcepto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_ConceptosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Delete_ConceptosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Movimientos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pcdSeg" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcdExp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_MovimientosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Delete_MovimientosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DELETE_EXPEDIENTE_RELACIONES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcdExp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DELETE_EXPEDIENTE_RELACIONESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DELETE_EXPEDIENTE_RELACIONESResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SvrReportPath">
+        <s:complexType />
+      </s:element>
+      <s:element name="SvrReportPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SvrReportPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SvrReportServer">
+        <s:complexType />
+      </s:element>
+      <s:element name="SvrReportServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SvrReportServerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NroSistemaSoapIn">
+    <wsdl:part name="parameters" element="tns:NroSistema" />
+  </wsdl:message>
+  <wsdl:message name="NroSistemaSoapOut">
+    <wsdl:part name="parameters" element="tns:NroSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SP_OBTENERPROVEEDOR_PORCODIGOSoapIn">
+    <wsdl:part name="parameters" element="tns:SP_OBTENERPROVEEDOR_PORCODIGO" />
+  </wsdl:message>
+  <wsdl:message name="SP_OBTENERPROVEEDOR_PORCODIGOSoapOut">
+    <wsdl:part name="parameters" element="tns:SP_OBTENERPROVEEDOR_PORCODIGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTE" />
+  </wsdl:message>
+  <wsdl:message name="SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ReportesSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Reportes" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ReportesSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_ReportesResponse" />
+  </wsdl:message>
+  <wsdl:message name="OBTENER_ULTIMO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:OBTENER_ULTIMO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="OBTENER_ULTIMO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:OBTENER_ULTIMO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="VALIDA_EXPEDIENTESCOMPROBANTES_SoapIn">
+    <wsdl:part name="parameters" element="tns:VALIDA_EXPEDIENTESCOMPROBANTES_" />
+  </wsdl:message>
+  <wsdl:message name="VALIDA_EXPEDIENTESCOMPROBANTES_SoapOut">
+    <wsdl:part name="parameters" element="tns:VALIDA_EXPEDIENTESCOMPROBANTES_Response" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_TipoExpedienteSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_TipoExpediente" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_TipoExpedienteSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_TipoExpedienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Proveedores_BycuitSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Proveedores_Bycuit" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Proveedores_BycuitSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Proveedores_BycuitResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_SuConceptoSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_SuConcepto" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_SuConceptoSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_SuConceptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="OBTENER_ESTADOS_ByEXPEDIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:OBTENER_ESTADOS_ByEXPEDIENTE" />
+  </wsdl:message>
+  <wsdl:message name="OBTENER_ESTADOS_ByEXPEDIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:OBTENER_ESTADOS_ByEXPEDIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="Val_BycdCom_BycdProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:Val_BycdCom_BycdProveedor" />
+  </wsdl:message>
+  <wsdl:message name="Val_BycdCom_BycdProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:Val_BycdCom_BycdProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarComprobantes_BycdProvSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarComprobantes_BycdProv" />
+  </wsdl:message>
+  <wsdl:message name="ValidarComprobantes_BycdProvSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarComprobantes_BycdProvResponse" />
+  </wsdl:message>
+  <wsdl:message name="SP_ValidaCotizacion_BycdMoneda_byFechaSoapIn">
+    <wsdl:part name="parameters" element="tns:SP_ValidaCotizacion_BycdMoneda_byFecha" />
+  </wsdl:message>
+  <wsdl:message name="SP_ValidaCotizacion_BycdMoneda_byFechaSoapOut">
+    <wsdl:part name="parameters" element="tns:SP_ValidaCotizacion_BycdMoneda_byFechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraerPantalla_ByConceptoSoapIn">
+    <wsdl:part name="parameters" element="tns:TraerPantalla_ByConcepto" />
+  </wsdl:message>
+  <wsdl:message name="TraerPantalla_ByConceptoSoapOut">
+    <wsdl:part name="parameters" element="tns:TraerPantalla_ByConceptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusquedaFiltradaExpedientesSoapIn">
+    <wsdl:part name="parameters" element="tns:BusquedaFiltradaExpedientes" />
+  </wsdl:message>
+  <wsdl:message name="BusquedaFiltradaExpedientesSoapOut">
+    <wsdl:part name="parameters" element="tns:BusquedaFiltradaExpedientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_codExpedienteSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_codExpediente" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_codExpedienteSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_codExpedienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ComprobantesAsociadosSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_ComprobantesAsociados" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ComprobantesAsociadosSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_ComprobantesAsociadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="SP_Busqueda_ConvenioOtrosSoapIn">
+    <wsdl:part name="parameters" element="tns:SP_Busqueda_ConvenioOtros" />
+  </wsdl:message>
+  <wsdl:message name="SP_Busqueda_ConvenioOtrosSoapOut">
+    <wsdl:part name="parameters" element="tns:SP_Busqueda_ConvenioOtrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_EstadosSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Estados" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_EstadosSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_EstadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_EtapaSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Etapa" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_EtapaSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_EtapaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Proveedores_OrganismosSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Proveedores_Organismos" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Proveedores_OrganismosSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Proveedores_OrganismosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ClaseComprobantesSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_ClaseComprobantes" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ClaseComprobantesSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_ClaseComprobantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_TipoComprobantesSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_TipoComprobantes" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_TipoComprobantesSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_TipoComprobantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_MonedasSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Monedas" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_MonedasSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_MonedasResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_TipoPeriodicidadSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_TipoPeriodicidad" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_TipoPeriodicidadSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_TipoPeriodicidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_PeriodicidadSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Periodicidad" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_PeriodicidadSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_PeriodicidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ConceptosSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Conceptos" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ConceptosSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_ConceptosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_AreasSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Areas" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_AreasSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_AreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CotizacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Cotizaciones" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CotizacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_CotizacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarDesgloseSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarDesglose" />
+  </wsdl:message>
+  <wsdl:message name="ValidarDesgloseSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarDesgloseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarConceptoSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarConcepto" />
+  </wsdl:message>
+  <wsdl:message name="ValidarConceptoSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarConceptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TRAER_EXPEDIENTE_DESGLOSADOSoapIn">
+    <wsdl:part name="parameters" element="tns:TRAER_EXPEDIENTE_DESGLOSADO" />
+  </wsdl:message>
+  <wsdl:message name="TRAER_EXPEDIENTE_DESGLOSADOSoapOut">
+    <wsdl:part name="parameters" element="tns:TRAER_EXPEDIENTE_DESGLOSADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectIndicadoresGestionSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectIndicadoresGestion" />
+  </wsdl:message>
+  <wsdl:message name="SelectIndicadoresGestionSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectIndicadoresGestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SP_TOOLTIP_COMPROBANTESSoapIn">
+    <wsdl:part name="parameters" element="tns:SP_TOOLTIP_COMPROBANTES" />
+  </wsdl:message>
+  <wsdl:message name="SP_TOOLTIP_COMPROBANTESSoapOut">
+    <wsdl:part name="parameters" element="tns:SP_TOOLTIP_COMPROBANTESResponse" />
+  </wsdl:message>
+  <wsdl:message name="SP_TOOLTIP_MovimientosDelExpedienteSoapIn">
+    <wsdl:part name="parameters" element="tns:SP_TOOLTIP_MovimientosDelExpediente" />
+  </wsdl:message>
+  <wsdl:message name="SP_TOOLTIP_MovimientosDelExpedienteSoapOut">
+    <wsdl:part name="parameters" element="tns:SP_TOOLTIP_MovimientosDelExpedienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SP_TOOLTIP_OBSERVACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:SP_TOOLTIP_OBSERVACION" />
+  </wsdl:message>
+  <wsdl:message name="SP_TOOLTIP_OBSERVACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:SP_TOOLTIP_OBSERVACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="SP_SELECT_NroExpedienteRelSoapIn">
+    <wsdl:part name="parameters" element="tns:SP_SELECT_NroExpedienteRel" />
+  </wsdl:message>
+  <wsdl:message name="SP_SELECT_NroExpedienteRelSoapOut">
+    <wsdl:part name="parameters" element="tns:SP_SELECT_NroExpedienteRelResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ComprobantesRelSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_ComprobantesRel" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ComprobantesRelSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_ComprobantesRelResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ComprobantesTodosSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_ComprobantesTodos" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_ComprobantesTodosSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_ComprobantesTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UltimaEtapaSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_UltimaEtapa" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UltimaEtapaSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_UltimaEtapaResponse" />
+  </wsdl:message>
+  <wsdl:message name="VALIDAR_ANEXADOSoapIn">
+    <wsdl:part name="parameters" element="tns:VALIDAR_ANEXADO" />
+  </wsdl:message>
+  <wsdl:message name="VALIDAR_ANEXADOSoapOut">
+    <wsdl:part name="parameters" element="tns:VALIDAR_ANEXADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="VALIDAR_INFORMANDOEXPEDIENTEANEXADOSoapIn">
+    <wsdl:part name="parameters" element="tns:VALIDAR_INFORMANDOEXPEDIENTEANEXADO" />
+  </wsdl:message>
+  <wsdl:message name="VALIDAR_INFORMANDOEXPEDIENTEANEXADOSoapOut">
+    <wsdl:part name="parameters" element="tns:VALIDAR_INFORMANDOEXPEDIENTEANEXADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_DESGLOSESoapIn">
+    <wsdl:part name="parameters" element="tns:INSERT_DESGLOSE" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_DESGLOSESoapOut">
+    <wsdl:part name="parameters" element="tns:INSERT_DESGLOSEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpedientesConceptos_IUSoapIn">
+    <wsdl:part name="parameters" element="tns:ExpedientesConceptos_IU" />
+  </wsdl:message>
+  <wsdl:message name="ExpedientesConceptos_IUSoapOut">
+    <wsdl:part name="parameters" element="tns:ExpedientesConceptos_IUResponse" />
+  </wsdl:message>
+  <wsdl:message name="CONCEPTOS_ISoapIn">
+    <wsdl:part name="parameters" element="tns:CONCEPTOS_I" />
+  </wsdl:message>
+  <wsdl:message name="CONCEPTOS_ISoapOut">
+    <wsdl:part name="parameters" element="tns:CONCEPTOS_IResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_COMPROBANTES_ECSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_COMPROBANTES_EC" />
+  </wsdl:message>
+  <wsdl:message name="Insert_COMPROBANTES_ECSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_COMPROBANTES_ECResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_ESoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_E" />
+  </wsdl:message>
+  <wsdl:message name="Insert_ESoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_EResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_SEGUIMIENTO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_SEGUIMIENTO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="Insert_SEGUIMIENTO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_SEGUIMIENTO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTESSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTES" />
+  </wsdl:message>
+  <wsdl:message name="Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTESSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTESResponse" />
+  </wsdl:message>
+  <wsdl:message name="Proveedor_IUSoapIn">
+    <wsdl:part name="parameters" element="tns:Proveedor_IU" />
+  </wsdl:message>
+  <wsdl:message name="Proveedor_IUSoapOut">
+    <wsdl:part name="parameters" element="tns:Proveedor_IUResponse" />
+  </wsdl:message>
+  <wsdl:message name="CotizacionMoneda_IUSoapIn">
+    <wsdl:part name="parameters" element="tns:CotizacionMoneda_IU" />
+  </wsdl:message>
+  <wsdl:message name="CotizacionMoneda_IUSoapOut">
+    <wsdl:part name="parameters" element="tns:CotizacionMoneda_IUResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpedientesConveniosOtros_IUSoapIn">
+    <wsdl:part name="parameters" element="tns:ExpedientesConveniosOtros_IU" />
+  </wsdl:message>
+  <wsdl:message name="ExpedientesConveniosOtros_IUSoapOut">
+    <wsdl:part name="parameters" element="tns:ExpedientesConveniosOtros_IUResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_CSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_C" />
+  </wsdl:message>
+  <wsdl:message name="Update_CSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_CResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_SeguimientoSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Seguimiento" />
+  </wsdl:message>
+  <wsdl:message name="Update_SeguimientoSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_SeguimientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTESSoapIn">
+    <wsdl:part name="parameters" element="tns:ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTES" />
+  </wsdl:message>
+  <wsdl:message name="ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTESSoapOut">
+    <wsdl:part name="parameters" element="tns:ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTESResponse" />
+  </wsdl:message>
+  <wsdl:message name="ELIMINAR_RELACION_COMPROBANTESSoapIn">
+    <wsdl:part name="parameters" element="tns:ELIMINAR_RELACION_COMPROBANTES" />
+  </wsdl:message>
+  <wsdl:message name="ELIMINAR_RELACION_COMPROBANTESSoapOut">
+    <wsdl:part name="parameters" element="tns:ELIMINAR_RELACION_COMPROBANTESResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_ConceptosSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Conceptos" />
+  </wsdl:message>
+  <wsdl:message name="Delete_ConceptosSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_ConceptosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_MovimientosSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Movimientos" />
+  </wsdl:message>
+  <wsdl:message name="Delete_MovimientosSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_MovimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="DELETE_EXPEDIENTE_RELACIONESSoapIn">
+    <wsdl:part name="parameters" element="tns:DELETE_EXPEDIENTE_RELACIONES" />
+  </wsdl:message>
+  <wsdl:message name="DELETE_EXPEDIENTE_RELACIONESSoapOut">
+    <wsdl:part name="parameters" element="tns:DELETE_EXPEDIENTE_RELACIONESResponse" />
+  </wsdl:message>
+  <wsdl:message name="SvrReportPathSoapIn">
+    <wsdl:part name="parameters" element="tns:SvrReportPath" />
+  </wsdl:message>
+  <wsdl:message name="SvrReportPathSoapOut">
+    <wsdl:part name="parameters" element="tns:SvrReportPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="SvrReportServerSoapIn">
+    <wsdl:part name="parameters" element="tns:SvrReportServer" />
+  </wsdl:message>
+  <wsdl:message name="SvrReportServerSoapOut">
+    <wsdl:part name="parameters" element="tns:SvrReportServerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsFacturasSoap">
+    <wsdl:operation name="NroSistema">
+      <wsdl:input message="tns:NroSistemaSoapIn" />
+      <wsdl:output message="tns:NroSistemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_OBTENERPROVEEDOR_PORCODIGO">
+      <wsdl:input message="tns:SP_OBTENERPROVEEDOR_PORCODIGOSoapIn" />
+      <wsdl:output message="tns:SP_OBTENERPROVEEDOR_PORCODIGOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTE">
+      <wsdl:input message="tns:SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTESoapIn" />
+      <wsdl:output message="tns:SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Reportes">
+      <wsdl:input message="tns:Obtener_ReportesSoapIn" />
+      <wsdl:output message="tns:Obtener_ReportesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OBTENER_ULTIMO_ESTADO">
+      <wsdl:input message="tns:OBTENER_ULTIMO_ESTADOSoapIn" />
+      <wsdl:output message="tns:OBTENER_ULTIMO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VALIDA_EXPEDIENTESCOMPROBANTES_">
+      <wsdl:input message="tns:VALIDA_EXPEDIENTESCOMPROBANTES_SoapIn" />
+      <wsdl:output message="tns:VALIDA_EXPEDIENTESCOMPROBANTES_SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoExpediente">
+      <wsdl:input message="tns:Obtener_TipoExpedienteSoapIn" />
+      <wsdl:output message="tns:Obtener_TipoExpedienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Proveedores_Bycuit">
+      <wsdl:input message="tns:Obtener_Proveedores_BycuitSoapIn" />
+      <wsdl:output message="tns:Obtener_Proveedores_BycuitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_SuConcepto">
+      <wsdl:input message="tns:Obtener_SuConceptoSoapIn" />
+      <wsdl:output message="tns:Obtener_SuConceptoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OBTENER_ESTADOS_ByEXPEDIENTE">
+      <wsdl:input message="tns:OBTENER_ESTADOS_ByEXPEDIENTESoapIn" />
+      <wsdl:output message="tns:OBTENER_ESTADOS_ByEXPEDIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Val_BycdCom_BycdProveedor">
+      <wsdl:input message="tns:Val_BycdCom_BycdProveedorSoapIn" />
+      <wsdl:output message="tns:Val_BycdCom_BycdProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarComprobantes_BycdProv">
+      <wsdl:input message="tns:ValidarComprobantes_BycdProvSoapIn" />
+      <wsdl:output message="tns:ValidarComprobantes_BycdProvSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ValidaCotizacion_BycdMoneda_byFecha">
+      <wsdl:input message="tns:SP_ValidaCotizacion_BycdMoneda_byFechaSoapIn" />
+      <wsdl:output message="tns:SP_ValidaCotizacion_BycdMoneda_byFechaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraerPantalla_ByConcepto">
+      <wsdl:input message="tns:TraerPantalla_ByConceptoSoapIn" />
+      <wsdl:output message="tns:TraerPantalla_ByConceptoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BusquedaFiltradaExpedientes">
+      <wsdl:input message="tns:BusquedaFiltradaExpedientesSoapIn" />
+      <wsdl:output message="tns:BusquedaFiltradaExpedientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_codExpediente">
+      <wsdl:input message="tns:Obtener_codExpedienteSoapIn" />
+      <wsdl:output message="tns:Obtener_codExpedienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ComprobantesAsociados">
+      <wsdl:input message="tns:Obtener_ComprobantesAsociadosSoapIn" />
+      <wsdl:output message="tns:Obtener_ComprobantesAsociadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Busqueda_ConvenioOtros">
+      <wsdl:input message="tns:SP_Busqueda_ConvenioOtrosSoapIn" />
+      <wsdl:output message="tns:SP_Busqueda_ConvenioOtrosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Estados">
+      <wsdl:input message="tns:Obtener_EstadosSoapIn" />
+      <wsdl:output message="tns:Obtener_EstadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Etapa">
+      <wsdl:input message="tns:Obtener_EtapaSoapIn" />
+      <wsdl:output message="tns:Obtener_EtapaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Proveedores_Organismos">
+      <wsdl:input message="tns:Obtener_Proveedores_OrganismosSoapIn" />
+      <wsdl:output message="tns:Obtener_Proveedores_OrganismosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ClaseComprobantes">
+      <wsdl:input message="tns:Obtener_ClaseComprobantesSoapIn" />
+      <wsdl:output message="tns:Obtener_ClaseComprobantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoComprobantes">
+      <wsdl:input message="tns:Obtener_TipoComprobantesSoapIn" />
+      <wsdl:output message="tns:Obtener_TipoComprobantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Monedas">
+      <wsdl:input message="tns:Obtener_MonedasSoapIn" />
+      <wsdl:output message="tns:Obtener_MonedasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoPeriodicidad">
+      <wsdl:input message="tns:Obtener_TipoPeriodicidadSoapIn" />
+      <wsdl:output message="tns:Obtener_TipoPeriodicidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Periodicidad">
+      <wsdl:input message="tns:Obtener_PeriodicidadSoapIn" />
+      <wsdl:output message="tns:Obtener_PeriodicidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Conceptos">
+      <wsdl:input message="tns:Obtener_ConceptosSoapIn" />
+      <wsdl:output message="tns:Obtener_ConceptosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Areas">
+      <wsdl:input message="tns:Obtener_AreasSoapIn" />
+      <wsdl:output message="tns:Obtener_AreasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cotizaciones">
+      <wsdl:input message="tns:Obtener_CotizacionesSoapIn" />
+      <wsdl:output message="tns:Obtener_CotizacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDesglose">
+      <wsdl:input message="tns:ValidarDesgloseSoapIn" />
+      <wsdl:output message="tns:ValidarDesgloseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarConcepto">
+      <wsdl:input message="tns:ValidarConceptoSoapIn" />
+      <wsdl:output message="tns:ValidarConceptoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TRAER_EXPEDIENTE_DESGLOSADO">
+      <wsdl:input message="tns:TRAER_EXPEDIENTE_DESGLOSADOSoapIn" />
+      <wsdl:output message="tns:TRAER_EXPEDIENTE_DESGLOSADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectIndicadoresGestion">
+      <wsdl:input message="tns:SelectIndicadoresGestionSoapIn" />
+      <wsdl:output message="tns:SelectIndicadoresGestionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_TOOLTIP_COMPROBANTES">
+      <wsdl:input message="tns:SP_TOOLTIP_COMPROBANTESSoapIn" />
+      <wsdl:output message="tns:SP_TOOLTIP_COMPROBANTESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_TOOLTIP_MovimientosDelExpediente">
+      <wsdl:input message="tns:SP_TOOLTIP_MovimientosDelExpedienteSoapIn" />
+      <wsdl:output message="tns:SP_TOOLTIP_MovimientosDelExpedienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_TOOLTIP_OBSERVACION">
+      <wsdl:input message="tns:SP_TOOLTIP_OBSERVACIONSoapIn" />
+      <wsdl:output message="tns:SP_TOOLTIP_OBSERVACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_SELECT_NroExpedienteRel">
+      <wsdl:input message="tns:SP_SELECT_NroExpedienteRelSoapIn" />
+      <wsdl:output message="tns:SP_SELECT_NroExpedienteRelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ComprobantesRel">
+      <wsdl:input message="tns:Obtener_ComprobantesRelSoapIn" />
+      <wsdl:output message="tns:Obtener_ComprobantesRelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ComprobantesTodos">
+      <wsdl:input message="tns:Obtener_ComprobantesTodosSoapIn" />
+      <wsdl:output message="tns:Obtener_ComprobantesTodosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UltimaEtapa">
+      <wsdl:input message="tns:Obtener_UltimaEtapaSoapIn" />
+      <wsdl:output message="tns:Obtener_UltimaEtapaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VALIDAR_ANEXADO">
+      <wsdl:input message="tns:VALIDAR_ANEXADOSoapIn" />
+      <wsdl:output message="tns:VALIDAR_ANEXADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VALIDAR_INFORMANDOEXPEDIENTEANEXADO">
+      <wsdl:input message="tns:VALIDAR_INFORMANDOEXPEDIENTEANEXADOSoapIn" />
+      <wsdl:output message="tns:VALIDAR_INFORMANDOEXPEDIENTEANEXADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_DESGLOSE">
+      <wsdl:input message="tns:INSERT_DESGLOSESoapIn" />
+      <wsdl:output message="tns:INSERT_DESGLOSESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpedientesConceptos_IU">
+      <wsdl:input message="tns:ExpedientesConceptos_IUSoapIn" />
+      <wsdl:output message="tns:ExpedientesConceptos_IUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CONCEPTOS_I">
+      <wsdl:input message="tns:CONCEPTOS_ISoapIn" />
+      <wsdl:output message="tns:CONCEPTOS_ISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_COMPROBANTES_EC">
+      <wsdl:input message="tns:Insert_COMPROBANTES_ECSoapIn" />
+      <wsdl:output message="tns:Insert_COMPROBANTES_ECSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_E">
+      <wsdl:input message="tns:Insert_ESoapIn" />
+      <wsdl:output message="tns:Insert_ESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SEGUIMIENTO_ESTADO">
+      <wsdl:input message="tns:Insert_SEGUIMIENTO_ESTADOSoapIn" />
+      <wsdl:output message="tns:Insert_SEGUIMIENTO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTES">
+      <wsdl:input message="tns:Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTESSoapIn" />
+      <wsdl:output message="tns:Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Proveedor_IU">
+      <wsdl:input message="tns:Proveedor_IUSoapIn" />
+      <wsdl:output message="tns:Proveedor_IUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CotizacionMoneda_IU">
+      <wsdl:input message="tns:CotizacionMoneda_IUSoapIn" />
+      <wsdl:output message="tns:CotizacionMoneda_IUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpedientesConveniosOtros_IU">
+      <wsdl:input message="tns:ExpedientesConveniosOtros_IUSoapIn" />
+      <wsdl:output message="tns:ExpedientesConveniosOtros_IUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_C">
+      <wsdl:input message="tns:Update_CSoapIn" />
+      <wsdl:output message="tns:Update_CSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Seguimiento">
+      <wsdl:input message="tns:Update_SeguimientoSoapIn" />
+      <wsdl:output message="tns:Update_SeguimientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTES">
+      <wsdl:input message="tns:ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTESSoapIn" />
+      <wsdl:output message="tns:ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAR_RELACION_COMPROBANTES">
+      <wsdl:input message="tns:ELIMINAR_RELACION_COMPROBANTESSoapIn" />
+      <wsdl:output message="tns:ELIMINAR_RELACION_COMPROBANTESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Conceptos">
+      <wsdl:input message="tns:Delete_ConceptosSoapIn" />
+      <wsdl:output message="tns:Delete_ConceptosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Movimientos">
+      <wsdl:input message="tns:Delete_MovimientosSoapIn" />
+      <wsdl:output message="tns:Delete_MovimientosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_EXPEDIENTE_RELACIONES">
+      <wsdl:input message="tns:DELETE_EXPEDIENTE_RELACIONESSoapIn" />
+      <wsdl:output message="tns:DELETE_EXPEDIENTE_RELACIONESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SvrReportPath">
+      <wsdl:input message="tns:SvrReportPathSoapIn" />
+      <wsdl:output message="tns:SvrReportPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SvrReportServer">
+      <wsdl:input message="tns:SvrReportServerSoapIn" />
+      <wsdl:output message="tns:SvrReportServerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsFacturasSoap" type="tns:wsFacturasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NroSistema">
+      <soap:operation soapAction="http://tempuri.org/NroSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_OBTENERPROVEEDOR_PORCODIGO">
+      <soap:operation soapAction="http://tempuri.org/SP_OBTENERPROVEEDOR_PORCODIGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTE">
+      <soap:operation soapAction="http://tempuri.org/SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Reportes">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Reportes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OBTENER_ULTIMO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/OBTENER_ULTIMO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALIDA_EXPEDIENTESCOMPROBANTES_">
+      <soap:operation soapAction="http://tempuri.org/VALIDA_EXPEDIENTESCOMPROBANTES_" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoExpediente">
+      <soap:operation soapAction="http://tempuri.org/Obtener_TipoExpediente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Proveedores_Bycuit">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Proveedores_Bycuit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_SuConcepto">
+      <soap:operation soapAction="http://tempuri.org/Obtener_SuConcepto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OBTENER_ESTADOS_ByEXPEDIENTE">
+      <soap:operation soapAction="http://tempuri.org/OBTENER_ESTADOS_ByEXPEDIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Val_BycdCom_BycdProveedor">
+      <soap:operation soapAction="http://tempuri.org/Val_BycdCom_BycdProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarComprobantes_BycdProv">
+      <soap:operation soapAction="http://tempuri.org/ValidarComprobantes_BycdProv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ValidaCotizacion_BycdMoneda_byFecha">
+      <soap:operation soapAction="http://tempuri.org/SP_ValidaCotizacion_BycdMoneda_byFecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerPantalla_ByConcepto">
+      <soap:operation soapAction="http://tempuri.org/TraerPantalla_ByConcepto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusquedaFiltradaExpedientes">
+      <soap:operation soapAction="http://tempuri.org/BusquedaFiltradaExpedientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_codExpediente">
+      <soap:operation soapAction="http://tempuri.org/Obtener_codExpediente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ComprobantesAsociados">
+      <soap:operation soapAction="http://tempuri.org/Obtener_ComprobantesAsociados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Busqueda_ConvenioOtros">
+      <soap:operation soapAction="http://tempuri.org/SP_Busqueda_ConvenioOtros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Estados">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Estados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Etapa">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Etapa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Proveedores_Organismos">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Proveedores_Organismos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ClaseComprobantes">
+      <soap:operation soapAction="http://tempuri.org/Obtener_ClaseComprobantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoComprobantes">
+      <soap:operation soapAction="http://tempuri.org/Obtener_TipoComprobantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Monedas">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Monedas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoPeriodicidad">
+      <soap:operation soapAction="http://tempuri.org/Obtener_TipoPeriodicidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Periodicidad">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Periodicidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Conceptos">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Conceptos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Areas">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Areas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cotizaciones">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Cotizaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDesglose">
+      <soap:operation soapAction="http://tempuri.org/ValidarDesglose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarConcepto">
+      <soap:operation soapAction="http://tempuri.org/ValidarConcepto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TRAER_EXPEDIENTE_DESGLOSADO">
+      <soap:operation soapAction="http://tempuri.org/TRAER_EXPEDIENTE_DESGLOSADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectIndicadoresGestion">
+      <soap:operation soapAction="http://tempuri.org/SelectIndicadoresGestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_TOOLTIP_COMPROBANTES">
+      <soap:operation soapAction="http://tempuri.org/SP_TOOLTIP_COMPROBANTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_TOOLTIP_MovimientosDelExpediente">
+      <soap:operation soapAction="http://tempuri.org/SP_TOOLTIP_MovimientosDelExpediente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_TOOLTIP_OBSERVACION">
+      <soap:operation soapAction="http://tempuri.org/SP_TOOLTIP_OBSERVACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_SELECT_NroExpedienteRel">
+      <soap:operation soapAction="http://tempuri.org/SP_SELECT_NroExpedienteRel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ComprobantesRel">
+      <soap:operation soapAction="http://tempuri.org/Obtener_ComprobantesRel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ComprobantesTodos">
+      <soap:operation soapAction="http://tempuri.org/Obtener_ComprobantesTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UltimaEtapa">
+      <soap:operation soapAction="http://tempuri.org/Obtener_UltimaEtapa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALIDAR_ANEXADO">
+      <soap:operation soapAction="http://tempuri.org/VALIDAR_ANEXADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALIDAR_INFORMANDOEXPEDIENTEANEXADO">
+      <soap:operation soapAction="http://tempuri.org/VALIDAR_INFORMANDOEXPEDIENTEANEXADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_DESGLOSE">
+      <soap:operation soapAction="http://tempuri.org/INSERT_DESGLOSE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpedientesConceptos_IU">
+      <soap:operation soapAction="http://tempuri.org/ExpedientesConceptos_IU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CONCEPTOS_I">
+      <soap:operation soapAction="http://tempuri.org/CONCEPTOS_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_COMPROBANTES_EC">
+      <soap:operation soapAction="http://tempuri.org/Insert_COMPROBANTES_EC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_E">
+      <soap:operation soapAction="http://tempuri.org/Insert_E" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SEGUIMIENTO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/Insert_SEGUIMIENTO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTES">
+      <soap:operation soapAction="http://tempuri.org/Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proveedor_IU">
+      <soap:operation soapAction="http://tempuri.org/Proveedor_IU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CotizacionMoneda_IU">
+      <soap:operation soapAction="http://tempuri.org/CotizacionMoneda_IU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpedientesConveniosOtros_IU">
+      <soap:operation soapAction="http://tempuri.org/ExpedientesConveniosOtros_IU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_C">
+      <soap:operation soapAction="http://tempuri.org/Update_C" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Seguimiento">
+      <soap:operation soapAction="http://tempuri.org/Update_Seguimiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTES">
+      <soap:operation soapAction="http://tempuri.org/ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAR_RELACION_COMPROBANTES">
+      <soap:operation soapAction="http://tempuri.org/ELIMINAR_RELACION_COMPROBANTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Conceptos">
+      <soap:operation soapAction="http://tempuri.org/Delete_Conceptos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Movimientos">
+      <soap:operation soapAction="http://tempuri.org/Delete_Movimientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_EXPEDIENTE_RELACIONES">
+      <soap:operation soapAction="http://tempuri.org/DELETE_EXPEDIENTE_RELACIONES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SvrReportPath">
+      <soap:operation soapAction="http://tempuri.org/SvrReportPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SvrReportServer">
+      <soap:operation soapAction="http://tempuri.org/SvrReportServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsFacturasSoap12" type="tns:wsFacturasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NroSistema">
+      <soap12:operation soapAction="http://tempuri.org/NroSistema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_OBTENERPROVEEDOR_PORCODIGO">
+      <soap12:operation soapAction="http://tempuri.org/SP_OBTENERPROVEEDOR_PORCODIGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTE">
+      <soap12:operation soapAction="http://tempuri.org/SP_SELECCIONAR_COMPROBANTES_BYEXPEDIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Reportes">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Reportes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OBTENER_ULTIMO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/OBTENER_ULTIMO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALIDA_EXPEDIENTESCOMPROBANTES_">
+      <soap12:operation soapAction="http://tempuri.org/VALIDA_EXPEDIENTESCOMPROBANTES_" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoExpediente">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_TipoExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Proveedores_Bycuit">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Proveedores_Bycuit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_SuConcepto">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_SuConcepto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OBTENER_ESTADOS_ByEXPEDIENTE">
+      <soap12:operation soapAction="http://tempuri.org/OBTENER_ESTADOS_ByEXPEDIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Val_BycdCom_BycdProveedor">
+      <soap12:operation soapAction="http://tempuri.org/Val_BycdCom_BycdProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarComprobantes_BycdProv">
+      <soap12:operation soapAction="http://tempuri.org/ValidarComprobantes_BycdProv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ValidaCotizacion_BycdMoneda_byFecha">
+      <soap12:operation soapAction="http://tempuri.org/SP_ValidaCotizacion_BycdMoneda_byFecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerPantalla_ByConcepto">
+      <soap12:operation soapAction="http://tempuri.org/TraerPantalla_ByConcepto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusquedaFiltradaExpedientes">
+      <soap12:operation soapAction="http://tempuri.org/BusquedaFiltradaExpedientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_codExpediente">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_codExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ComprobantesAsociados">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_ComprobantesAsociados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Busqueda_ConvenioOtros">
+      <soap12:operation soapAction="http://tempuri.org/SP_Busqueda_ConvenioOtros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Estados">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Estados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Etapa">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Etapa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Proveedores_Organismos">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Proveedores_Organismos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ClaseComprobantes">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_ClaseComprobantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoComprobantes">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_TipoComprobantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Monedas">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Monedas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoPeriodicidad">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_TipoPeriodicidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Periodicidad">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Periodicidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Conceptos">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Conceptos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Areas">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Areas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cotizaciones">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Cotizaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDesglose">
+      <soap12:operation soapAction="http://tempuri.org/ValidarDesglose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarConcepto">
+      <soap12:operation soapAction="http://tempuri.org/ValidarConcepto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TRAER_EXPEDIENTE_DESGLOSADO">
+      <soap12:operation soapAction="http://tempuri.org/TRAER_EXPEDIENTE_DESGLOSADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectIndicadoresGestion">
+      <soap12:operation soapAction="http://tempuri.org/SelectIndicadoresGestion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_TOOLTIP_COMPROBANTES">
+      <soap12:operation soapAction="http://tempuri.org/SP_TOOLTIP_COMPROBANTES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_TOOLTIP_MovimientosDelExpediente">
+      <soap12:operation soapAction="http://tempuri.org/SP_TOOLTIP_MovimientosDelExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_TOOLTIP_OBSERVACION">
+      <soap12:operation soapAction="http://tempuri.org/SP_TOOLTIP_OBSERVACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_SELECT_NroExpedienteRel">
+      <soap12:operation soapAction="http://tempuri.org/SP_SELECT_NroExpedienteRel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ComprobantesRel">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_ComprobantesRel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ComprobantesTodos">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_ComprobantesTodos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UltimaEtapa">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_UltimaEtapa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALIDAR_ANEXADO">
+      <soap12:operation soapAction="http://tempuri.org/VALIDAR_ANEXADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALIDAR_INFORMANDOEXPEDIENTEANEXADO">
+      <soap12:operation soapAction="http://tempuri.org/VALIDAR_INFORMANDOEXPEDIENTEANEXADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_DESGLOSE">
+      <soap12:operation soapAction="http://tempuri.org/INSERT_DESGLOSE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpedientesConceptos_IU">
+      <soap12:operation soapAction="http://tempuri.org/ExpedientesConceptos_IU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CONCEPTOS_I">
+      <soap12:operation soapAction="http://tempuri.org/CONCEPTOS_I" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_COMPROBANTES_EC">
+      <soap12:operation soapAction="http://tempuri.org/Insert_COMPROBANTES_EC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_E">
+      <soap12:operation soapAction="http://tempuri.org/Insert_E" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_SEGUIMIENTO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/Insert_SEGUIMIENTO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTES">
+      <soap12:operation soapAction="http://tempuri.org/Insert_DESGLOSECOMPROBANTES_SIN_EXPEDIENTES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Proveedor_IU">
+      <soap12:operation soapAction="http://tempuri.org/Proveedor_IU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CotizacionMoneda_IU">
+      <soap12:operation soapAction="http://tempuri.org/CotizacionMoneda_IU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpedientesConveniosOtros_IU">
+      <soap12:operation soapAction="http://tempuri.org/ExpedientesConveniosOtros_IU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_C">
+      <soap12:operation soapAction="http://tempuri.org/Update_C" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Seguimiento">
+      <soap12:operation soapAction="http://tempuri.org/Update_Seguimiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTES">
+      <soap12:operation soapAction="http://tempuri.org/ELIMINAR_RELACION_EXPEDIENTESCOMPROBANTES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ELIMINAR_RELACION_COMPROBANTES">
+      <soap12:operation soapAction="http://tempuri.org/ELIMINAR_RELACION_COMPROBANTES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Conceptos">
+      <soap12:operation soapAction="http://tempuri.org/Delete_Conceptos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Movimientos">
+      <soap12:operation soapAction="http://tempuri.org/Delete_Movimientos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_EXPEDIENTE_RELACIONES">
+      <soap12:operation soapAction="http://tempuri.org/DELETE_EXPEDIENTE_RELACIONES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SvrReportPath">
+      <soap12:operation soapAction="http://tempuri.org/SvrReportPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SvrReportServer">
+      <soap12:operation soapAction="http://tempuri.org/SvrReportServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsFacturas">
+    <wsdl:port name="wsFacturasSoap" binding="tns:wsFacturasSoap">
+      <soap:address location="http://preproduccion.secretariageneral.gob.ar/Facturas/wsFacturas/wsFacturas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsFacturasSoap12" binding="tns:wsFacturasSoap12">
+      <soap12:address location="http://preproduccion.secretariageneral.gob.ar/Facturas/wsFacturas/wsFacturas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

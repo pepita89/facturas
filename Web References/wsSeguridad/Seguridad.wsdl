@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InicioSessionporUsuarioWindows">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdSistema" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InicioSessionporUsuarioWindowsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InicioSessionporUsuarioWindowsResult" type="tns:clsLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsLogin">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDomain" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cdArea" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strArea" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cdResp" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreCompleto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsUsuarioNT" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="blLogged" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="cdSistema" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cdUsuario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="xmlPermisos">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dsEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cdEstado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowGuid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cdEdificio" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InicioSessionsinUsuarioWindows">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cdSistema" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InicioSessionsinUsuarioWindowsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InicioSessionsinUsuarioWindowsResult" type="tns:clsLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioWindows">
+        <s:complexType />
+      </s:element>
+      <s:element name="UsuarioWindowsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioWindowsResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPermisos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oLogin" type="tns:clsLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Permisos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Permisos" type="tns:ArrayOfClsPermiso" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClsPermiso">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsPermiso" nillable="true" type="tns:clsPermiso" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsPermiso">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="dsPermiso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cdPermiso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Elementos" type="tns:ArrayOfClsPermiso" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerPermisosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPermisosResult" type="tns:Permisos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerResponsables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerResponsablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerResponsablesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToXmlPerfil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arr" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ToXmlPerfilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ToXmlPerfilResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificarPagina">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsNombrePantalla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oPermisos">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificarPaginaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerificarPaginaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InicioSessionporUsuarioWindowsSoapIn">
+    <wsdl:part name="parameters" element="tns:InicioSessionporUsuarioWindows" />
+  </wsdl:message>
+  <wsdl:message name="InicioSessionporUsuarioWindowsSoapOut">
+    <wsdl:part name="parameters" element="tns:InicioSessionporUsuarioWindowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InicioSessionsinUsuarioWindowsSoapIn">
+    <wsdl:part name="parameters" element="tns:InicioSessionsinUsuarioWindows" />
+  </wsdl:message>
+  <wsdl:message name="InicioSessionsinUsuarioWindowsSoapOut">
+    <wsdl:part name="parameters" element="tns:InicioSessionsinUsuarioWindowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioWindowsSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuarioWindows" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioWindowsSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuarioWindowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPermisosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPermisos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPermisosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPermisosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerResponsablesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerResponsables" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerResponsablesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerResponsablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ToXmlPerfilSoapIn">
+    <wsdl:part name="parameters" element="tns:ToXmlPerfil" />
+  </wsdl:message>
+  <wsdl:message name="ToXmlPerfilSoapOut">
+    <wsdl:part name="parameters" element="tns:ToXmlPerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificarPaginaSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificarPagina" />
+  </wsdl:message>
+  <wsdl:message name="VerificarPaginaSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificarPaginaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SeguridadSoap">
+    <wsdl:operation name="InicioSessionporUsuarioWindows">
+      <wsdl:input message="tns:InicioSessionporUsuarioWindowsSoapIn" />
+      <wsdl:output message="tns:InicioSessionporUsuarioWindowsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InicioSessionsinUsuarioWindows">
+      <wsdl:input message="tns:InicioSessionsinUsuarioWindowsSoapIn" />
+      <wsdl:output message="tns:InicioSessionsinUsuarioWindowsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioWindows">
+      <wsdl:input message="tns:UsuarioWindowsSoapIn" />
+      <wsdl:output message="tns:UsuarioWindowsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPermisos">
+      <wsdl:input message="tns:ObtenerPermisosSoapIn" />
+      <wsdl:output message="tns:ObtenerPermisosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerResponsables">
+      <wsdl:input message="tns:ObtenerResponsablesSoapIn" />
+      <wsdl:output message="tns:ObtenerResponsablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToXmlPerfil">
+      <wsdl:input message="tns:ToXmlPerfilSoapIn" />
+      <wsdl:output message="tns:ToXmlPerfilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarPagina">
+      <wsdl:input message="tns:VerificarPaginaSoapIn" />
+      <wsdl:output message="tns:VerificarPaginaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SeguridadSoap" type="tns:SeguridadSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InicioSessionporUsuarioWindows">
+      <soap:operation soapAction="http://tempuri.org/InicioSessionporUsuarioWindows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InicioSessionsinUsuarioWindows">
+      <soap:operation soapAction="http://tempuri.org/InicioSessionsinUsuarioWindows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioWindows">
+      <soap:operation soapAction="http://tempuri.org/UsuarioWindows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPermisos">
+      <soap:operation soapAction="http://tempuri.org/ObtenerPermisos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerResponsables">
+      <soap:operation soapAction="http://tempuri.org/ObtenerResponsables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToXmlPerfil">
+      <soap:operation soapAction="http://tempuri.org/ToXmlPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarPagina">
+      <soap:operation soapAction="http://tempuri.org/VerificarPagina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SeguridadSoap12" type="tns:SeguridadSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InicioSessionporUsuarioWindows">
+      <soap12:operation soapAction="http://tempuri.org/InicioSessionporUsuarioWindows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InicioSessionsinUsuarioWindows">
+      <soap12:operation soapAction="http://tempuri.org/InicioSessionsinUsuarioWindows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioWindows">
+      <soap12:operation soapAction="http://tempuri.org/UsuarioWindows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPermisos">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerPermisos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerResponsables">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerResponsables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToXmlPerfil">
+      <soap12:operation soapAction="http://tempuri.org/ToXmlPerfil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarPagina">
+      <soap12:operation soapAction="http://tempuri.org/VerificarPagina" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Seguridad">
+    <wsdl:port name="SeguridadSoap" binding="tns:SeguridadSoap">
+      <soap:address location="http://preproduccion.secretariageneral.gob.ar/wsSeguridad/Seguridad.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SeguridadSoap12" binding="tns:SeguridadSoap12">
+      <soap12:address location="http://preproduccion.secretariageneral.gob.ar/wsSeguridad/Seguridad.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

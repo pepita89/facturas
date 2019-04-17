@@ -1,0 +1,1 @@
+<%@ WebService Language="VB" CodeBehind="wsFacturas.asmx.vb" Class="wsGestFacturas.wsFacturas" %>

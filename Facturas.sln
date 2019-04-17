@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Facturas", "Facturas.vbproj", "{1E42730C-95D7-445C-8CDF-C4A311E89272}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "clsFacturas", "clsFacturas\clsFacturas.vbproj", "{533CA19F-28DC-43C6-891F-57EAAAAB2B1E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "wsGestFacturas", "wsGestFacturas\wsGestFacturas.vbproj", "{E47D69D3-FBCE-4C24-9563-B089C2CA4578}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E8E75E5F-34D4-440D-BC1D-81AE5FD9B4CF}"
+	ProjectSection(SolutionItems) = preProject
+		clsFacturas\bin\Debug\clsFacturas.dll = clsFacturas\bin\Debug\clsFacturas.dll
+		clsFacturas\bin\Debug\clsFacturas.pdb = clsFacturas\bin\Debug\clsFacturas.pdb
+		clsFacturas\bin\Debug\clsFacturas.xml = clsFacturas\bin\Debug\clsFacturas.xml
+		clsFacturas\bin\Debug\Microsoft.ApplicationBlocks.Data.dll = clsFacturas\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E42730C-95D7-445C-8CDF-C4A311E89272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E42730C-95D7-445C-8CDF-C4A311E89272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E42730C-95D7-445C-8CDF-C4A311E89272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E42730C-95D7-445C-8CDF-C4A311E89272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{533CA19F-28DC-43C6-891F-57EAAAAB2B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{533CA19F-28DC-43C6-891F-57EAAAAB2B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{533CA19F-28DC-43C6-891F-57EAAAAB2B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{533CA19F-28DC-43C6-891F-57EAAAAB2B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E47D69D3-FBCE-4C24-9563-B089C2CA4578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E47D69D3-FBCE-4C24-9563-B089C2CA4578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E47D69D3-FBCE-4C24-9563-B089C2CA4578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E47D69D3-FBCE-4C24-9563-B089C2CA4578}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {649FD785-430C-4939-9F5D-CD77AB8C549E}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://vmpreproduccion:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = clsFacturas\\clsFacturas.vbproj
+		SccProjectName1 = clsFacturas
+		SccLocalPath1 = clsFacturas
+		SccProjectUniqueName2 = Facturas.vbproj
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = wsGestFacturas\\wsGestFacturas.vbproj
+		SccProjectName3 = wsGestFacturas
+		SccLocalPath3 = wsGestFacturas
+	EndGlobalSection
+EndGlobal
